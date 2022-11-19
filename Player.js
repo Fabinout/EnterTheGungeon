@@ -1,3 +1,5 @@
+import {Bullet} from "./Bullet";
+
 export class Player extends Square {
 
     constructor(gameSize, game) {
@@ -14,6 +16,7 @@ export class Player extends Square {
 
     update() {
         this.updatePosition();
+        this.shoot();
     }
 
     updatePosition() {
@@ -70,4 +73,14 @@ export class Player extends Square {
     }
 
 
+    updateShoot() {
+        if (this.keyboard.z()) {
+            this.shoot(0, -8, this.game)
+        }
+    }
+
+    shoot(x, y, game) {
+        const bulletCenter = {x: this.center.x + x, y: this.center.y + y};
+        game.addBullet(new Bullet(bulletCenter, x, y));
+    }
 }
