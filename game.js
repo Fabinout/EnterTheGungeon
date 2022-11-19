@@ -65,8 +65,10 @@ class Player extends Square {
         this.game = game;
         this.keyboard = new Keyboard();
     }
-
-    update() {
+    update(){
+        this.updatePosition();
+    }
+    updatePosition() {
         const speed = 6;
         const diagonalSpeed = Math.sqrt(2) * speed / 2;
 
