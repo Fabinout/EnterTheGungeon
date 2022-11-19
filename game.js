@@ -68,7 +68,7 @@ class Player extends Square {
 
     update() {
         const speed = 6;
-        const diagonalSpeed = Math.sqrt(speed);
+        const diagonalSpeed = Math.sqrt(2) * speed / 2;
 
         function moveRight(speed, player, gameSize) {
             player.center.x = Math.min(player.center.x + speed, gameSize.w - player.size.w / 2)
