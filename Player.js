@@ -1,4 +1,6 @@
-import {Bullet} from "./Bullet";
+import {Bullet} from "/Bullet.js";
+import {Square} from "/Square.js";
+import {Keyboard} from "/Keyboard.js";
 
 export class Player extends Square {
 
@@ -16,7 +18,7 @@ export class Player extends Square {
 
     update() {
         this.updatePosition();
-        this.shoot();
+        this.updateShoot();
     }
 
     updatePosition() {

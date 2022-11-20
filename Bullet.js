@@ -1,3 +1,5 @@
+import {Square} from "./Square.js";
+
 export class Bullet extends Square {
     constructor(center, xspeed, yspeed) {
         let size = {

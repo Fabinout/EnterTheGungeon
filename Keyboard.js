@@ -1,8 +1,9 @@
-class Keyboard {
+export class Keyboard {
 
     constructor() {
-        let keystate = {};
+        const keystate = {};
         window.onkeydown = function (ev) {
+            console.log("key:", ev.code);
             keystate[ev.code] = true;
 
         }
@@ -29,5 +30,9 @@ class Keyboard {
 
     up() {
         return this.isDown("ArrowUp");
+    }
+
+    z() {
+        return this.isDown("KeyW");
     }
 }
